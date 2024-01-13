@@ -1,38 +1,516 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Mein Portfolio</title>
+    <title>Meine Projekte</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0; /* Hintergrundfarbe ändern */
+            color: rgb(0, 0, 0); /* Textfarbe ändern */
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            margin-top: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .projekt {
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .projekt:hover {
+            background-color: #e0e0e0;
+        }
+
+        .code {
+            display: none;
+            margin-top: 20px;
+            background-color: #333;
+            padding: 15px;
+            color: #fff;
+        }
+
+        .beschreibung {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Farben für Variablen im Code */
+        .code span.variable {
+            color: rgb(0, 157, 255);
+        }
+
+        /* Farben für if-Statements */
+        .code span.if-statement {
+            color: purple;
+        }
+
+        /* Farben für print-Statements */
+        .code span.print-statement {
+            color: yellow;
+        }
+
+        .code {
+    display: none;
+    max-height: 300px; /* Ändere dies auf die gewünschte maximale Höhe */
+    overflow-y: auto; /* Füge einen vertikalen Scrollbalken hinzu, wenn der Inhalt höher ist */
+    background-color: #333;
+    padding: 15px;
+    color: #fff;
+}
+
+    /* Farben für Variablen im Code */
+    .code span.variable {
+        color: rgb(0, 157, 255);
+    }
+
+    /* Farben für if-Statements */
+    .code span.if-statement {
+        color: purple;
+    }
+
+    /* Farben für print-Statements */
+    .code span.print-statement {
+        color: yellow;
+    }
+
+    /* Änderungen für weißen Text */
+    .code code {
+        color: #fff;
+    }
+
+    /* Damit der Code linksbündig ist */
+    .code pre {
+        white-space: pre-wrap; /* Erlaubt Zeilenumbrüche innerhalb des Codes */
+        text-align: left;
+        margin: 0;
+    }
+
+        /* Farben für Variablen im Code für das Rock, Paper, Scissors Projekt */
+        #projekt1 .code span.variable {
+        color: rgb(0, 157, 255); /* Blau */
+    }
+
+    /* Farben für Variablen im Code für die Caesar-Verschlüsselung */
+    #projekt2 .code span.variable {
+        color: blue; /* Blau */
+    }
+
+    .code {
+    display: none;
+    margin-top: 20px;
+    background-color: #333;
+    padding: 15px;
+    color: #fff;
+    overflow-x: visible; /* Änderung auf visible */
+}
+
+
+
+    body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, #00a2ff, transparent 50%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::after{
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 400;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, #e5ff00, transparent 50%);
+    z-index: -1;
+    pointer-events: none;
+}
+.center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4; /* Hintergrundfarbe der Seite */
+        }
+
+        .header {
+            background-color: #333; /* Hintergrundfarbe des Headers */
+            color: #fff; /* Textfarbe des Headers */
+            text-align: center;
+            padding: 20px; /* Innenabstand des Headers */
+            width: 100%;
+        }
+
+        .container {
+            background-color: #fff; /* Hintergrundfarbe des Containers */
+            padding: 20px; /* Innenabstand des Containers */
+            width: 80%; /* Breite des Containers anpassen */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Schatten für den Container */
+            margin-top: 20px; /* Abstand zwischen Header und Container anpassen */
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Dein Name</h1>
-        <p>Webentwickler</p>
-    </header>
 
-    <section id="about">
-        <h2>Über mich</h2>
-        <p>Hier kannst du eine kurze Beschreibung über dich einfügen.</p>
-    </section>
+    <div class="header">
+        <h1>Mein Portfolio</h1>
+    </div>
 
-    <section id="projects">
-        <h2>Projekte</h2>
-        <!-- Hier kannst du deine Projekte auflisten -->
-        <div class="project">
-            <h3>Projekt 1</h3>
-            <p>Beschreibung des Projekts.</p>
+<div class="container">
+    <h2>Beispielprojekte mit Python: </h2>
+    <div class="projekt" onclick="toggleCode('projekt1')">
+        <h2>Rock, Paper, Scissors Game </h2>
+        <div class="beschreibung">Hier habe ich Schere Stein Papier mit Python programmiert gegen ein Computer.  (Um mehr zu sehen auf die Überschrift klicken) </div>
+    </div>
+    <div class="code" id="projekt1">
+        <div class="beschreibung">Code für Schere Stein Papier</div>
+        <pre>
+            <code>
+                import random
+
+                <span class="variable">print("SCHERE STEIN PAPIER")</span>
+                list = [<span class="variable">"Schere"</span>, <span class="variable">"Stein"</span>, <span class="variable">"Papier"</span>]
+                
+                punkte_spieler = 0
+                punkte_computer = 0
+                
+                while True:
+                    frage = input(<span class="variable">"Möchtest du Stein (st) Schere(s) oder Papier(p) auswählen ?  Drücke Q zum Verlassen des Spiels "</span>)
+                
+                    zahl = random.randint(0, 2)
+                    element = list[zahl]
+                
+                    <span class="if-statement"># Nutzer hat Stein gewählt</span>
+                    if frage.lower() == <span class="variable">"st"</span>:
+                        <span class="print-statement">print(element)</span>
+                        if element == <span class="variable">"Schere"</span>:
+                            <span class="if-statement">print("Du hast gewonnen!")</span>
+                            punkte_spieler += 1
+                        if element == <span class="variable">"Papier"</span>:
+                            <span class="if-statement">print("Du hast verloren !")</span>
+                            punkte_computer += 1
+                        if element == <span class="variable">"Stein"</span>:
+                            <span class="if-statement">print("Unentschieden keiner bekommt einen PUNKT")</span>
+                
+                    <span class="if-statement"># Nutzer hat Schere gewählt</span>
+                    if frage.lower() == <span class="variable">"s"</span>:
+                        <span class="print-statement">print(element)</span>
+                        if element == <span class="variable">"Stein"</span>:
+                            <span class="if-statement">print("Du hast verloren!")</span>
+                            punkte_computer += 1
+                        if element == <span class="variable">"Papier"</span>:
+                            <span class="if-statement">print("Du hast gewonnen !")</span>
+                            punkte_spieler += 1
+                        if element == <span class="variable">"Schere"</span>:
+                            <span class="if-statement">print("Unentschieden keiner bekommt einen PUNKT")</span>
+                
+                    <span class="if-statement"># Nutzer hat Papier gewählt</span>
+                    if frage.lower() == <span class="variable">"p"</span>:
+                        <span class="print-statement">print(element)</span>
+                        if element == <span class="variable">"Schere"</span>:
+                            <span class="if-statement">print("Du hast verloren!")</span>
+                            punkte_computer += 1
+                        if element == <span class="variable">"Stein"</span>:
+                            <span class="if-statement">print("Du hast gewonnen!")</span>
+                            punkte_spieler += 1
+                        if element == <span class="variable">"Papier"</span>:
+                            <span class="if-statement">print("Unentschieden keiner bekommt einen PUNKT")</span>
+                
+                    if frage.lower() == <span class="variable">"q"</span>:
+                        break
+                
+                <span class="print-statement">print("Du hast ", punkte_spieler, " Spiel gewonnen")</span>
+                <span class="print-statement">print("Der Computer hat ", punkte_computer, "Spiel gewonnen")</span>
+                <span class="print-statement">print("TSCHÜSS !")</span>
+            </code>
+        </pre>
+    </div>
+
+    <div class="projekt" onclick="toggleCode('projekt2')">
+        <h2>Ceaser Verschlüsselung </h2>
+        <div class="beschreibung">Hier habe ich mit der Ceaser Verschlüsselung eine Nachricht verschlüsselt , die man auch wieder endschlüsseln kann . </div>
+    </div>
+    <div class="code" id="projekt2">
+        <div class="beschreibung">
+       
+        <pre>
+            <code>
+                def caesar_verschlüsseln(unverschlüsselter_satz,schlüssel):
+    
+                speicher = ""
+                for buchstabe in unverschlüsselter_satz : 
+                        verschlüsselterbuchstabe = chr(ord(buchstabe) + schlüssel)
+                        speicher += verschlüsselterbuchstabe
+                return speicher      
+            
+            def caesar_entschlüsseln(verschlüsselter_satz , schlüssel):
+                speicher = ""
+                for buchstabe in verschlüsselter_satz : 
+                        entschlüsselterbuchstabe = chr(ord(buchstabe) - schlüssel)
+                        speicher += entschlüsselterbuchstabe
+                return speicher      
+                    
+            
+            # verschlüsseln
+            datei_pfad = 'text.txt'
+            
+            with open(datei_pfad , 'r') as datei : 
+                  unverschlüsselter_satz = datei.read()
+                
+            schlüssel= int ( input("Welchen Schlüssel möchstest du wählen? (Zahl)  ") )
+            verschlüsselt = caesar_verschlüsseln(unverschlüsselter_satz , schlüssel)
+            
+            with open (datei_pfad , 'w') as datei: 
+                  datei.write(verschlüsselt)
+            
+            print("Erledigt :) Guck in die datei : ) ")
+            
+            
+            # entschlüsseln
+            with open(datei_pfad , 'r') as datei : 
+                  verschlüsselter_satz = datei.read()
+                
+            schlüssel= int ( input("Was ist der richtige Schlüssel um die datei zu entschlüsseln (Zahl)  ") )
+            entschlüsselt = caesar_entschlüsseln(verschlüsselter_satz , schlüssel)
+            
+            with open (datei_pfad , 'w') as datei: 
+                  datei.write(entschlüsselt)
+            
+            print("Erledigt :) Guck in die datei : ) ")  
+            </code>
+        </pre>
+    </div>
+    
+</div>
+
+    <!-- Projekt 3: Neues Projekt -->
+    <div class="projekt" onclick="toggleCode('projekt3')">
+        <h2>Web Scraping</h2>
+        <div class="beschreibung">Hier habe ich von einer Website die wichtigesten Nachrichten  in eine seperate Datei abgespeichert (gescraped). </div>
+    </div>
+    <div class="code" id="projekt3">
+        <!-- Code für Projekt 3 -->
+        <div class="beschreibung">
+            <pre>
+                <code> 
+import requests as req
+import re
+from bs4 import BeautifulSoup
+
+url = "https://www.gyle.de/"
+
+# get breaking news
+
+res = req.get(url)
+html = res.text 
+
+soup = BeautifulSoup(html, 'html.parser')
+newsbox_div = soup.find('div', id='newsbox')
+
+ueberschriften_liste = []
+
+nachrichten = 1
+if newsbox_div:
+    news_list = []
+    news_items = newsbox_div.find_all('li')
+    for item in news_items:
+        news_text = item.get_text(strip=True)
+        news_list.append(news_text)
+
+    for headline in news_list:
+        # "mehr..." am Ende des Strings entfernen
+        bereinigter_text = headline.rstrip('mehr...')
+        ueberschriften_liste.append(bereinigter_text)
+        print(f"Nachricht {nachrichten}:\n", bereinigter_text)
+        nachrichten += 1
+else:
+    print("News section not found.")
+
+
+# get links to full articles of breaking news
+
+# Die Anfrage an die Webseite senden
+response = req.get(url)
+
+# Den HTML-Inhalt der Seite extrahieren
+html_content = response.text
+
+# BeautifulSoup verwenden, um den HTML-Inhalt zu analysieren
+soup = BeautifulSoup(html_content, "html.parser")
+
+newsbox = soup.find("div", id="newsbox")
+
+# Alle Links auf der Seite finden
+links = newsbox.find_all("a")
+
+
+
+
+# get content of full articles
+# Die URLs der Links extrahieren und ausgeben
+
+artikel_liste = []
+
+for link in links:
+    news_url = link.get("href")
+    res = req.get(news_url)
+    html = res.text 
+
+    # Create a BeautifulSoup object
+    soup = BeautifulSoup(html, "html.parser")
+
+    # Find the div with id="contentbox" and class="storycontent"
+    content_div = soup.find("div", id="contentbox")
+    artikel = content_div.find("div", class_="storycontent")
+
+    # Extract the story content
+    story_content = artikel.get_text(strip=True)
+
+    print(story_content)
+
+    artikel_liste.append(story_content)
+
+anzahl_artikel = len(artikel_liste)
+for i in range(0, anzahl_artikel-1):
+    print("Titel:",ueberschriften_liste[i], "\n")
+    print("Alles dazu:   "  , artikel_liste[i], "\n")
+    print("--------------------------------------")
+
+
+
+    # Schreiben der Nachrichten in eine Textdatei
+with open("nachrichten.txt", "a", encoding="utf-8") as file:
+    for i in range(0, anzahl_artikel):
+        file.write("Titel: " + ueberschriften_liste[i] + "\n")
+        file.write("Inhalt: " + artikel_liste[i] + "\n")
+        file.write("--------------------------------------\n")
+                </code>
+            </pre>
         </div>
-        <div class="project">
-            <h3>Projekt 2</h3>
-            <p>Beschreibung des Projekts.</p>
-        </div>
-    </section>
+    </div>
 
-    <section id="contact">
-        <h2>Kontakt</h2>
-        <p>Du kannst mich unter <a href="mailto:deine-email@example.com">deine-email@example.com</a> erreichen.</p>
-    </section>
+    <p style="text-align: left; color: black; font-size: 1.5em; font-weight: bold;">Mehr über die Web Entwicklung (Beispiel):</p>
+
+    <div class="projekt" onclick="toggleRecipeImage()">
+        <h2> Rezepte Website </h2>
+        <div class="beschreibung"> Diese Website kann ein paar Rezepte für zum Beispiel Sushi finden. Klicken sie auf das Bild um es wieder verschwinden zu lassen </div>
+    </div>
+    <div id="recipeImageContainer" class="center">
+        <img id="recipeImage" src="URL_DES_GROSSEN_BILDS" style="display: none; max-width: 1000px; cursor: pointer;" onclick="toggleRecipeImage()">
+    </div>
+    
+    <!-- JavaScript-Code für das dynamische Ein- und Ausblenden des Bildes -->
+    <script>
+        function toggleRecipeImage() {
+            var imgElement = document.getElementById('recipeImage');
+            var imgContainer = document.getElementById('recipeImageContainer');
+    
+            // Wenn das Bild ausgeblendet ist, zeige es an, sonst verstecke es
+            if (imgElement.style.display === 'none' || imgElement.style.display === '') {
+                // Hier ersetzen Sie 'URL_DES_GROSSEN_BILDS' durch die tatsächliche URL des großen Vorschaubildes
+                imgElement.src = 'WebsiteFürDasPraktikum.png';
+                imgElement.style.display = 'block';
+                imgContainer.style.display = 'block';
+            } else {
+                imgElement.style.display = 'none';
+                imgContainer.style.display = 'none';
+            }
+        }
+    </script>
+
+
+
+<p style="text-align: left; color: black; font-size: 1.5em; font-weight: bold;">Mehr über die Spieleentwicklung: </p>
+<p>Wie bin ich dazu gekommen:</p>
+<p>Vor vier Jahren habe ich mich sehr für Spiele interessiert und selber einige Spiele programmiert mit Unity. <br /> Ich habe mir alles durch Tutorials selber beigebracht. <br /> Ich habe mit C# programmiert wo ich mich momentan aber nicht mehr so gut auskenne. <br /> Einer meiner besten Spiele war ein Spiel mit einem Kreis in der Mitte wo ein anderer <br /> Kreis die grünen Vierecke einsammeln muss und nicht die roten berühren darf. <br /> Hier ein Video <br /> </p>
+
+<div class="container">
+    <!-- ... (wie bisher) ... -->
+
+    <p style="text-align: center; color: black; font-size: 1.5em; font-weight: bold; cursor: pointer;" onclick="toggleGameVideo()">Video(Klick mich um das Video zu öffnen und zu schließen)</p>
+
+    <div id="gameVideoContainer" class="center">
+        <video id="gameVideo" width="700" height="500" controls style="display: none;">
+            <source src="URL_DES_SPIEL_VIDEOS" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+  
+
+    <!-- ... (wie bisher) ... -->
+
+    <script>
+        // JavaScript function to toggle code visibility
+        function toggleCode(projectId) {
+            var codeElement = document.getElementById(projectId);
+            if (codeElement.style.display === 'none' || codeElement.style.display === '') {
+                codeElement.style.display = 'block';
+            } else {
+                codeElement.style.display = 'none';
+            }
+        }
+
+        // Function to toggle the recipe image
+        function toggleRecipeImage() {
+            var imgElement = document.getElementById('recipeImage');
+            var imgContainer = document.getElementById('recipeImageContainer');
+
+            if (imgElement.style.display === 'none' || imgElement.style.display === '') {
+                imgElement.src = 'WebsiteFürDasPraktikum.png';
+                imgElement.style.display = 'block';
+                imgContainer.style.display = 'block';
+            } else {
+                imgElement.style.display = 'none';
+                imgContainer.style.display = 'none';
+            }
+        }
+
+        // Function to toggle the game video
+        function toggleGameVideo() {
+            var videoElement = document.getElementById('gameVideo');
+            var videoContainer = document.getElementById('gameVideoContainer');
+
+            if (videoElement.style.display === 'none' || videoElement.style.display === '') {
+                videoElement.src = 'VideoSpiel.mp4';
+                videoElement.style.display = 'block';
+                videoContainer.style.display = 'block';
+            } else {
+                videoElement.style.display = 'none';
+                videoContainer.style.display = 'none';
+                videoElement.pause();
+            }
+        }
+    </script>
+    
+
+
 </body>
-</html>
+</html> 
