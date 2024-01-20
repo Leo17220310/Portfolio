@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Leos Portfolio</title>
    
 </head>
@@ -12,7 +13,7 @@
     <header>
         <h1>PORTFOLIO VON LEO</h1>
     </header>
-
+die 
     <section>
         <h2>Meine Beispielprojekte mit Python</h2>
 
@@ -258,6 +259,7 @@ print("Erledigt :) Guck in die datei : ) ")
 
 
         <h2>Meine Websites (Screenshot)</h2>
+        <h3>Website 1: Rezepte </h3>
         <p>Das ist eine Website wo man zum Beispiel von dem beliebten Gericht Sushi <br> Rezept Ideen von anderen Website bekommt </p>
         <button class="screenshot-button" onclick="showScreenshot('screenshot2')">Screenshot anzeigen</button>
         <div id="screenshot2" class="screenshot-modal" onclick="hideScreenshot('screenshot2')">
@@ -265,40 +267,34 @@ print("Erledigt :) Guck in die datei : ) ")
             <img src="WebsiteFürDasPraktikum.png" alt="Screenshot von Projekt 2">
         </div>
     </div>
+     
+    <h3>Website 2: Rätsel</h3>
+    <p>Das ist eine Website wo es verschiedene Rätsel gibt.  <br>Natürlich auch mitr den Lösungen ;) </p>
+    <button class="screenshot-button" onclick="showScreenshot('screenshot3')">Screenshot anzeigen</button>
+    <div id="screenshot3" class="screenshot-modal" onclick="hideScreenshot('screenshot3')">
+        <span class="close-button" onclick="hideScreenshot('screenshot3')">X</span>
+        <img src="WebsiteRätsel.png" alt="Screenshot von Projekt 3">
+    </div>
+
+    <h3>Website 3: Hundesteckbrief</h3>
+    <p>Diese Website war meine erste Website. Es ist ein Steckbrief über meinen Hund. <br> Es war das erste Mal, dass ich mit HTML/CSS in Verbindung getreten bin </p>
+    <button class="screenshot-button" onclick="showScreenshot('screenshot4')">Screenshot anzeigen</button>
+    <div id="screenshot4" class="screenshot-modal" onclick="hideScreenshot('screenshot4')">
+        <span class="close-button" onclick="hideScreenshot('screenshot4')">X</span>
+        <img src="PepperWebsite.png" alt="Screenshot von Projekt 4">
+    </div>
 
     </section>
-
-    <script>
-        function showScreenshot(modalId) {
-            var modal = document.getElementById(modalId);
-            modal.style.display = "flex";
-        }
-
-        function hideScreenshot(modalId) {
-            var modal = document.getElementById(modalId);
-            modal.style.display = "none";
-        }
-    </script>
-
+   
     <div class="animated-ring">
         <div class="horizontal-line"></div>
-    </div>
-    <div class="centered-l"><h1>LEO</h1></div>
-
-    <footer>
+        </div>
+        <div class="centered-l"><h1>LEO</h1></div>
+        
+        <footer>
         &copy; 2024 Leo Radtke
-    </footer>
-
-    <script>
-        function toggleCode(codeId) {
-            var codeContainer = document.getElementById(codeId);
-            if (codeContainer.style.display === "none") {
-                codeContainer.style.display = "block";
-            } else {
-                codeContainer.style.display = "none";
-            }
-        }
-    </script>
+        </footer>
+        
 
 </body>
 </html>
