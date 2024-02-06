@@ -20,3 +20,30 @@ function toggleCode(codeId) {
         codeContainer.style.display = "none";
     }
 }
+
+function showVideo() {
+    var videoContainer = document.getElementById("video-container");
+    if (videoContainer.style.display === "none") {
+        videoContainer.style.display = "block";
+    } else {
+        videoContainer.style.display = "none";
+    }
+}
+
+      // Function to toggle the game video
+      function toggleGameVideo() {
+        var videoElement = document.getElementById('gameVideo');
+        var videoContainer = document.getElementById('gameVideoContainer');
+
+        if (videoElement.style.display === 'none' || videoElement.style.display === '') {
+            videoElement.src = 'VideoSpiel.mp4';
+            videoElement.style.display = 'block';
+            videoContainer.style.display = 'block';
+        } else {
+            videoElement.style.display = 'none';
+            videoContainer.style.display = 'none';
+            videoElement.pause();
+        }
+    }
+
+

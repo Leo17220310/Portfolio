@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>Leos Portfolio</title>
-   
 </head>
 <body>
 
@@ -18,88 +17,87 @@
         <h2>Meine Beispielprojekte mit Python</h2>
 
         <div class="project">
-            <h3>Projekt 1 : Schere / Stein / Papier</h3>
-            <p>Dieses Spiel wird vielen sehr bekannt vorkommen , man spielt Schere Stein Papier gegen den Computer. <br> Man kann gewinnen , verlieren und unentschieden spielen.</p>
+            <h3>Projekt 1: Schere / Stein / Papier</h3>
+            <p>Dieses Spiel wird vielen sehr bekannt vorkommen, man spielt Schere Stein Papier gegen den Computer. <br> Man kann gewinnen, verlieren und unentschieden spielen.</p>
             <button class="code-button" onclick="toggleCode('code1')">Code anzeigen/verbergen</button>
             <div id="code1" class="code-container">
                 <pre>
                     <code>
-                        <h1>Code: </h1> 
+                        <h1>Code:</h1> 
 
                         
 import random
 
 print("SCHERE STEIN PAPIER")
-list = [ "Schere" ,"Stein" ,"Papier"]
+liste = ["Schere", "Stein", "Papier"]
 
 punkte_spieler = 0
 punkte_computer = 0
 
 while True:
-frage = input("Möchtest du Stein (st) Schere(s) oder Papier(p) auswählen ?  Drücke Q zum Verlassen des Spiels ")
+    frage = input("Möchtest du Stein (st), Schere(s) oder Papier(p) auswählen? Drücke Q zum Verlassen des Spiels ")
 
-zahl = random.randint(0, 2)
-element = list[zahl]
+    zahl = random.randint(0, 2)
+    element = liste[zahl]
 
-# Nutzer hat Stein gewählt
-if frage .lower() == "st":
-print(element)
-if element == "Schere":
-print("Du hast gewonnen!")
-punkte_spieler += 1
-if element =="Papier":
-print ("Du hast verloren !")
-punkte_computer += 1
-if element == "Stein":
-print("Unetschieden keiner bekommt einen PUNKT")
+    # Nutzer hat Stein gewählt
+    if frage.lower() == "st":
+        print(element)
+        if element == "Schere":
+            print("Du hast gewonnen!")
+            punkte_spieler += 1
+        if element == "Papier":
+            print("Du hast verloren!")
+            punkte_computer += 1
+        if element == "Stein":
+            print("Unentschieden, keiner bekommt einen PUNKT")
 
 
-# Nutzer hat Schere gewählt
-if frage .lower() == "s":
-print(element)
-if element == "Stein":
-print("Du hast verloren!")
-punkte_computer += 1
-if element =="Papier":
-print("Du hast gewonnen !")
-punkte_spieler += 1
-if element == "Schere":
-print("Unetschieden keiner bekommt einen PUNKT")
+    # Nutzer hat Schere gewählt
+    if frage.lower() == "s":
+        print(element)
+        if element == "Stein":
+            print("Du hast verloren!")
+            punkte_computer += 1
+        if element == "Papier":
+            print("Du hast gewonnen!")
+            punkte_spieler += 1
+        if element == "Schere":
+            print("Unentschieden, keiner bekommt einen PUNKT")
                         
-# Nutzer hat Papier gewählt
-if frage .lower() == "p":
-print(element)
-if element == "Schere":
-print("Du hast verloren!")
-punkte_computer += 1
-if element == "Stein":
-print("Du hast gewonnen!")
-punkte_spieler += 1
-if element == "Papier":
-print("Unetschieden keiner bekommt einen PUNKT")
+    # Nutzer hat Papier gewählt
+    if frage.lower() == "p":
+        print(element)
+        if element == "Schere":
+            print("Du hast verloren!")
+            punkte_computer += 1
+        if element == "Stein":
+            print("Du hast gewonnen!")
+            punkte_spieler += 1
+        if element == "Papier":
+            print("Unentschieden, keiner bekommt einen PUNKT")
                         
-                        
-if frage .lower() == "q":
- break
+    if frage.lower() == "q":
+        break
                         
                             
                         
-print("Du hast ",punkte_spieler ," Spiel gewonnen")
-print("Der Computer hat ",punkte_computer ,"Spiel gewonnen")
-  print("TSCHÜSS !")
+print("Du hast", punkte_spieler, "Spiel gewonnen")
+print("Der Computer hat", punkte_computer, "Spiel gewonnen")
+print("TSCHÜSS!")
                     </code>
                 </pre>
             </div>
         </div>
 
         <div class="project">
-            <h3>Projekt 2 : Web Scraping mit Pyhton </h3>
-            <p>In diesem Projekt habe ich aus einer Website die wichtigesten und neusten News <br> in eine extra Datei reingespeichert. Man kann auf die Datei zugreifen und immer wenn man <br> den Code ausführt bleiben die alte News in der Datei gespeichert . </p>
+            <h3>Projekt 2: Web Scraping mit Python</h3>
+            <p>In diesem Projekt habe ich aus einer Website die wichtigsten und neuesten News <br> in eine extra Datei gespeichert. Man kann auf die Datei zugreifen und immer wenn man <br> den Code ausführt, bleiben die alten News in der Datei gespeichert.</p>
             <button class="code-button" onclick="toggleCode('code2')">Code anzeigen/verbergen</button>
             <div id="code2" class="code-container">
                 <pre>
                     <code>
- <h1>Code: </h1> 
+ <h1>Code:</h1> 
 
 
 
@@ -109,7 +107,7 @@ from bs4 import BeautifulSoup
 
 url = "https://www.gyle.de/"
 
-# get breaking news
+# Holen der aktuellen Nachrichten
 
 res = req.get(url)
 html = res.text 
@@ -121,28 +119,28 @@ ueberschriften_liste = []
 
 nachrichten = 1
 if newsbox_div:
-news_list = []
-news_items = newsbox_div.find_all('li')
-for item in news_items:
-news_text = item.get_text(strip=True)
-news_list.append(news_text)
+    news_list = []
+    news_items = newsbox_div.find_all('li')
+    for item in news_items:
+        news_text = item.get_text(strip=True)
+        news_list.append(news_text)
 
-for headline in news_list:
-# "mehr..." am Ende des Strings entfernen
-bereinigter_text = headline.rstrip('mehr...')
-ueberschriften_liste.append(bereinigter_text)
-print(f"Nachricht {nachrichten}:\n", bereinigter_text)
-nachrichten += 1
+    for headline in news_list:
+        # "mehr..." am Ende des Strings entfernen
+        bereinigter_text = headline.rstrip('mehr...')
+        ueberschriften_liste.append(bereinigter_text)
+        print(f"Nachricht {nachrichten}:\n", bereinigter_text)
+        nachrichten += 1
 else:
-print("News section not found.")
+    print("News-Sektion nicht gefunden.")
 
 
-# get links to full articles of breaking news
+# Holen der Links zu den vollständigen Artikeln der aktuellen Nachrichten
 
-# Die Anfrage an die Webseite senden
+# Anfrage an die Webseite senden
 response = req.get(url)
 
-# Den HTML-Inhalt der Seite extrahieren
+# HTML-Inhalt der Seite extrahieren
 html_content = response.text
 
 # BeautifulSoup verwenden, um den HTML-Inhalt zu analysieren
@@ -156,102 +154,102 @@ links = newsbox.find_all("a")
 
 
 
-# get content of full articles
+# Holen des Inhalts der vollständigen Artikel
 # Die URLs der Links extrahieren und ausgeben
 
 artikel_liste = []
 
 for link in links:
-news_url = link.get("href")
-res = req.get(news_url)
-html = res.text 
+    news_url = link.get("href")
+    res = req.get(news_url)
+    html = res.text 
 
-# Create a BeautifulSoup object
-soup = BeautifulSoup(html, "html.parser")
+    # BeautifulSoup-Objekt erstellen
+    soup = BeautifulSoup(html, "html.parser")
 
-# Find the div with id="contentbox" and class="storycontent"
-content_div = soup.find("div", id="contentbox")
-artikel = content_div.find("div", class_="storycontent")
+    # div mit id="contentbox" und class="storycontent" finden
+    content_div = soup.find("div", id="contentbox")
+    artikel = content_div.find("div", class_="storycontent")
 
-# Extract the story content
-story_content = artikel.get_text(strip=True)
+    # Inhalt des Artikels extrahieren
+    story_content = artikel.get_text(strip=True)
 
-print(story_content)
+    print(story_content)
 
-artikel_liste.append(story_content)
+    artikel_liste.append(story_content)
 
 anzahl_artikel = len(artikel_liste)
 for i in range(0, anzahl_artikel-1):
-print("Titel:",ueberschriften_liste[i], "\n")
-print("Alles dazu:   "  , artikel_liste[i], "\n")
-print("--------------------------------------")
+    print("Titel:", ueberschriften_liste[i], "\n")
+    print("Alles dazu:   ", artikel_liste[i], "\n")
+    print("--------------------------------------")
 
 
 
 # Schreiben der Nachrichten in eine Textdatei
 with open("nachrichten.txt", "a", encoding="utf-8") as file:
-for i in range(0, anzahl_artikel):
-file.write("Titel: " + ueberschriften_liste[i] + "\n")
-file.write("Inhalt: " + artikel_liste[i] + "\n")
-file.write("--------------------------------------\n")
+    for i in range(0, anzahl_artikel):
+        file.write("Titel: " + ueberschriften_liste[i] + "\n")
+        file.write("Inhalt: " + artikel_liste[i] + "\n")
+        file.write("--------------------------------------\n")
                     </code>
                 </pre>
             </div>
         </div>
 
         <div class="project">
-            <h3>Projekt 3 : Ceaser Verschlüsselung </h3>
-            <p>In diesem Projekt habe ich eine Nachricht ,  die ein Benutzer eingeben kann  , verschlüsselt <br> mithilfe der Ceaser Verschlüsselung. </p>
+            <h3>Projekt 3: Caesar-Verschlüsselung</h3>
+            <p>In diesem Projekt habe ich eine Nachricht, die ein Benutzer eingeben kann, verschlüsselt <br> mithilfe der Caesar-Verschlüsselung.</p>
             <button class="code-button" onclick="toggleCode('code3')">Code anzeigen/verbergen</button>
             <div id="code3" class="code-container">
                 <pre>
                     <code>
- <h1>Code: </h1> 
+ <h1>Code:</h1> 
 
 
 
-def caesar_verschlüsseln(unverschlüsselter_satz,schlüssel):
+def caesar_verschlüsseln(unverschlüsselter_satz, schlüssel):
 
-speicher = ""
-for buchstabe in unverschlüsselter_satz : 
-verschlüsselterbuchstabe = chr(ord(buchstabe) + schlüssel)
-speicher += verschlüsselterbuchstabe
-return speicher      
+    speicher = ""
+    for buchstabe in unverschlüsselter_satz: 
+        verschlüsselter_buchstabe = chr(ord(buchstabe) + schlüssel)
+        speicher += verschlüsselter_buchstabe
+    return speicher      
 
-def caesar_entschlüsseln(verschlüsselter_satz , schlüssel):
-speicher = ""
-for buchstabe in verschlüsselter_satz : 
-entschlüsselterbuchstabe = chr(ord(buchstabe) - schlüssel)
-speicher += entschlüsselterbuchstabe
-return speicher      
+def caesar_entschlüsseln(verschlüsselter_satz, schlüssel):
+    speicher = ""
+    for buchstabe in verschlüsselter_satz: 
+        entschlüsselter_buchstabe = chr(ord(buchstabe) - schlüssel)
+        speicher += entschlüsselter_buchstabe
+    return speicher      
 
 
-# verschlüsseln
+# Verschlüsseln
 datei_pfad = 'text.txt'
 
-with open(datei_pfad , 'r') as datei : 
-unverschlüsselter_satz = datei.read()
+with open(datei_pfad, 'r') as datei: 
+    unverschlüsselter_satz = datei.read()
 
-schlüssel= int ( input("Welchen Schlüssel möchstest du wählen? (Zahl)  ") )
-verschlüsselt = caesar_verschlüsseln(unverschlüsselter_satz , schlüssel)
+schlüssel = int(input("Welchen Schlüssel möchtest du wählen? (Zahl) "))
+verschlüsselt = caesar_verschlüsseln(unverschlüsselter_satz, schlüssel)
 
-with open (datei_pfad , 'w') as datei: 
-datei.write(verschlüsselt)
+with open(datei_pfad, 'w') as datei: 
+    datei.write(verschlüsselt)
 
-print("Erledigt :) Guck in die datei : ) ")
+print("Erledigt :) Guck in die Datei : ) ")
 
 
-# entschlüsseln
-with open(datei_pfad , 'r') as datei : 
-verschlüsselter_satz = datei.read()
+# Entschlüsseln
+with open(datei_pfad, 'r') as datei: 
+    verschlüsselter_satz = datei.read()
 
-schlüssel= int ( input("Was ist der richtige Schlüssel um die datei zu entschlüsseln (Zahl)  ") )
-entschlüsselt = caesar_entschlüsseln(verschlüsselter_satz , schlüssel)
+schlüssel = int(input("Was ist der richtige Schlüssel, um die Datei zu entschlüsseln (Zahl)? "))
+entschlüsselt = caesar_entschlüsseln(verschlüsselter_satz, schlüssel)
 
-with open (datei_pfad , 'w') as datei: 
-datei.write(entschlüsselt)
+with open(datei_pfad, 'w') as datei: 
+    datei.write(entschlüsselt)
 
-print("Erledigt :) Guck in die datei : ) ")
+print("Erledigt :) Guck in die Datei : ) ")
                     </code>
                 </pre>
             </div>
@@ -259,8 +257,8 @@ print("Erledigt :) Guck in die datei : ) ")
 
 
         <h2>Meine Websites (Screenshot)</h2>
-        <h3>Website 1: Rezepte </h3>
-        <p>Das ist eine Website wo man zum Beispiel von dem beliebten Gericht Sushi <br> Rezept Ideen von anderen Website bekommt </p>
+        <h3>Website 1: Rezepte</h3>
+        <p>Das ist eine Website, wo man zum Beispiel von dem beliebten Gericht Sushi <br> Rezept Ideen von anderen Websites bekommt.</p>
         <button class="screenshot-button" onclick="showScreenshot('screenshot2')">Screenshot anzeigen</button>
         <div id="screenshot2" class="screenshot-modal" onclick="hideScreenshot('screenshot2')">
             <span class="close-button" onclick="hideScreenshot('screenshot2')">X</span>
@@ -269,7 +267,7 @@ print("Erledigt :) Guck in die datei : ) ")
     </div>
      
     <h3>Website 2: Rätsel</h3>
-    <p>Das ist eine Website wo es verschiedene Rätsel gibt.  <br>Natürlich auch mitr den Lösungen ;) </p>
+    <p>Das ist eine Website, wo es verschiedene Rätsel gibt.  <br>Natürlich auch mit den Lösungen.</p>
     <button class="screenshot-button" onclick="showScreenshot('screenshot3')">Screenshot anzeigen</button>
     <div id="screenshot3" class="screenshot-modal" onclick="hideScreenshot('screenshot3')">
         <span class="close-button" onclick="hideScreenshot('screenshot3')">X</span>
@@ -277,23 +275,38 @@ print("Erledigt :) Guck in die datei : ) ")
     </div>
 
     <h3>Website 3: Hundesteckbrief</h3>
-    <p>Diese Website war meine erste Website. Es ist ein Steckbrief über meinen Hund. <br> Es war das erste Mal, dass ich mit HTML/CSS in Verbindung getreten bin </p>
+    <p>Diese Website war meine erste Website. Es ist ein Steckbrief über meinen Hund. <br> Es war das erste Mal, dass ich mit HTML/CSS in Verbindung gekommen bin.</p>
     <button class="screenshot-button" onclick="showScreenshot('screenshot4')">Screenshot anzeigen</button>
     <div id="screenshot4" class="screenshot-modal" onclick="hideScreenshot('screenshot4')">
         <span class="close-button" onclick="hideScreenshot('screenshot4')">X</span>
         <img src="PepperWebsite.png" alt="Screenshot von Projekt 4">
     </div>
+    <h3>Website 4: Portfolio</h3>
+    <p>Diese Website ist natürlich auch selbst programmiert.</p>
+
+    <h3>Meine Spiele mit Unity (Video)</h3> 
+    <p>Alle Spiele wurden selbst programmiert mit C# (mit Tutorial). Falls das Video nicht aufklappt, runterscrollen.</p>
+      <!-- Hier fügen Sie den Video-Button und das Video-Element hinzu -->
+      <button class="video-button" onclick="showVideo()">Video anzeigen (-> runter scrollen)</button>
+      <div id="video-container" class="video-container" style="display: none;">
+          <video controls width="820" height="400">
+              <source src="VideoFertig.mp4" type="video/mp4">
+              <!-- Fügen Sie hier alternative Videoformate hinzu, falls benötigt -->
+              Dein Browser unterstützt das Video-Tag nicht.
+          </video>
+      </div>
+
 
     </section>
    
     <div class="animated-ring">
         <div class="horizontal-line"></div>
-        </div>
-        <div class="centered-l"><h1>LEO</h1></div>
+    </div>
+    <div class="centered-l"><h1>LEO</h1></div>
         
-        <footer>
+    <footer>
         &copy; 2024 Leo Radtke
-        </footer>
+    </footer>
         
 
 </body>
