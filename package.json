@@ -1,0 +1,15 @@
+{
+  "name": "portfoliopraktikum",
+  "version": "1.0.0",
+  "description": "PORTFOLIO VORLAGE",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.19.2"
+  }
+}
