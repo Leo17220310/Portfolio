@@ -10,6 +10,21 @@ function hideScreenshot(modalId) {
 }
 
 
+function toggleMode() {
+    var body = document.body;
+    var button = document.querySelector('.toggle-mode-button');
+
+    if (body.classList.contains("dark-mode")) {
+        body.classList.remove("dark-mode");
+        button.textContent = "Dark Mode";
+    } else {
+        body.classList.add("dark-mode");
+        button.textContent = "White Mode";
+    }
+}
+
+
+
 
 
 function toggleCode(codeId) {

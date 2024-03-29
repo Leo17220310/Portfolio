@@ -26,66 +26,11 @@
                     <code>
                         <h1>Code:</h1> 
 
-                        
-import random
+                        <div class="gist">
+                            <script src="https://gist.github.com/Leo17220310/dc4d869a982020a46e0e070eeb6196dc.js"></script>
+                      
+                          </div>
 
-print("SCHERE STEIN PAPIER")
-liste = ["Schere", "Stein", "Papier"]
-
-punkte_spieler = 0
-punkte_computer = 0
-
-while True:
-    frage = input("Möchtest du Stein (st), Schere(s) oder Papier(p) auswählen? Drücke Q zum Verlassen des Spiels ")
-
-    zahl = random.randint(0, 2)
-    element = liste[zahl]
-
-    # Nutzer hat Stein gewählt
-    if frage.lower() == "st":
-        print(element)
-        if element == "Schere":
-            print("Du hast gewonnen!")
-            punkte_spieler += 1
-        if element == "Papier":
-            print("Du hast verloren!")
-            punkte_computer += 1
-        if element == "Stein":
-            print("Unentschieden, keiner bekommt einen PUNKT")
-
-
-    # Nutzer hat Schere gewählt
-    if frage.lower() == "s":
-        print(element)
-        if element == "Stein":
-            print("Du hast verloren!")
-            punkte_computer += 1
-        if element == "Papier":
-            print("Du hast gewonnen!")
-            punkte_spieler += 1
-        if element == "Schere":
-            print("Unentschieden, keiner bekommt einen PUNKT")
-                        
-    # Nutzer hat Papier gewählt
-    if frage.lower() == "p":
-        print(element)
-        if element == "Schere":
-            print("Du hast verloren!")
-            punkte_computer += 1
-        if element == "Stein":
-            print("Du hast gewonnen!")
-            punkte_spieler += 1
-        if element == "Papier":
-            print("Unentschieden, keiner bekommt einen PUNKT")
-                        
-    if frage.lower() == "q":
-        break
-                        
-                            
-                        
-print("Du hast", punkte_spieler, "Spiel gewonnen")
-print("Der Computer hat", punkte_computer, "Spiel gewonnen")
-print("TSCHÜSS!")
                     </code>
                 </pre>
             </div>
@@ -100,99 +45,12 @@ print("TSCHÜSS!")
                     <code>
  <h1>Code:</h1> 
 
-
-
-import requests as req
-import re
-from bs4 import BeautifulSoup
-
-url = "https://www.gyle.de/"
-
-# Holen der aktuellen Nachrichten
-
-res = req.get(url)
-html = res.text 
-
-soup = BeautifulSoup(html, 'html.parser')
-newsbox_div = soup.find('div', id='newsbox')
-
-ueberschriften_liste = []
-
-nachrichten = 1
-if newsbox_div:
-    news_list = []
-    news_items = newsbox_div.find_all('li')
-    for item in news_items:
-        news_text = item.get_text(strip=True)
-        news_list.append(news_text)
-
-    for headline in news_list:
-        # "mehr..." am Ende des Strings entfernen
-        bereinigter_text = headline.rstrip('mehr...')
-        ueberschriften_liste.append(bereinigter_text)
-        print(f"Nachricht {nachrichten}:\n", bereinigter_text)
-        nachrichten += 1
-else:
-    print("News-Sektion nicht gefunden.")
-
-
-# Holen der Links zu den vollständigen Artikeln der aktuellen Nachrichten
-
-# Anfrage an die Webseite senden
-response = req.get(url)
-
-# HTML-Inhalt der Seite extrahieren
-html_content = response.text
-
-# BeautifulSoup verwenden, um den HTML-Inhalt zu analysieren
-soup = BeautifulSoup(html_content, "html.parser")
-
-newsbox = soup.find("div", id="newsbox")
-
-# Alle Links auf der Seite finden
-links = newsbox.find_all("a")
+ <div class="gist">
+    <script src="https://gist.github.com/Leo17220310/cacc1a73c2b52f4045caabf4fad08272.js"></script>
+  </div>
 
 
 
-
-# Holen des Inhalts der vollständigen Artikel
-# Die URLs der Links extrahieren und ausgeben
-
-artikel_liste = []
-
-for link in links:
-    news_url = link.get("href")
-    res = req.get(news_url)
-    html = res.text 
-
-    # BeautifulSoup-Objekt erstellen
-    soup = BeautifulSoup(html, "html.parser")
-
-    # div mit id="contentbox" und class="storycontent" finden
-    content_div = soup.find("div", id="contentbox")
-    artikel = content_div.find("div", class_="storycontent")
-
-    # Inhalt des Artikels extrahieren
-    story_content = artikel.get_text(strip=True)
-
-    print(story_content)
-
-    artikel_liste.append(story_content)
-
-anzahl_artikel = len(artikel_liste)
-for i in range(0, anzahl_artikel-1):
-    print("Titel:", ueberschriften_liste[i], "\n")
-    print("Alles dazu:   ", artikel_liste[i], "\n")
-    print("--------------------------------------")
-
-
-
-# Schreiben der Nachrichten in eine Textdatei
-with open("nachrichten.txt", "a", encoding="utf-8") as file:
-    for i in range(0, anzahl_artikel):
-        file.write("Titel: " + ueberschriften_liste[i] + "\n")
-        file.write("Inhalt: " + artikel_liste[i] + "\n")
-        file.write("--------------------------------------\n")
                     </code>
                 </pre>
             </div>
@@ -204,54 +62,10 @@ with open("nachrichten.txt", "a", encoding="utf-8") as file:
             <button class="code-button" onclick="toggleCode('code3')">Code anzeigen/verbergen</button>
             <div id="code3" class="code-container">
                 <pre>
-                    <code>
- <h1>Code:</h1> 
-
-
-
-def caesar_verschlüsseln(unverschlüsselter_satz, schlüssel):
-
-    speicher = ""
-    for buchstabe in unverschlüsselter_satz: 
-        verschlüsselter_buchstabe = chr(ord(buchstabe) + schlüssel)
-        speicher += verschlüsselter_buchstabe
-    return speicher      
-
-def caesar_entschlüsseln(verschlüsselter_satz, schlüssel):
-    speicher = ""
-    for buchstabe in verschlüsselter_satz: 
-        entschlüsselter_buchstabe = chr(ord(buchstabe) - schlüssel)
-        speicher += entschlüsselter_buchstabe
-    return speicher      
-
-
-# Verschlüsseln
-datei_pfad = 'text.txt'
-
-with open(datei_pfad, 'r') as datei: 
-    unverschlüsselter_satz = datei.read()
-
-schlüssel = int(input("Welchen Schlüssel möchtest du wählen? (Zahl) "))
-verschlüsselt = caesar_verschlüsseln(unverschlüsselter_satz, schlüssel)
-
-with open(datei_pfad, 'w') as datei: 
-    datei.write(verschlüsselt)
-
-print("Erledigt :) Guck in die Datei : ) ")
-
-
-# Entschlüsseln
-with open(datei_pfad, 'r') as datei: 
-    verschlüsselter_satz = datei.read()
-
-schlüssel = int(input("Was ist der richtige Schlüssel, um die Datei zu entschlüsseln (Zahl)? "))
-entschlüsselt = caesar_entschlüsseln(verschlüsselter_satz, schlüssel)
-
-with open(datei_pfad, 'w') as datei: 
-    datei.write(entschlüsselt)
-
-print("Erledigt :) Guck in die Datei : ) ")
-                    </code>
+                   
+                    <div class="gist">
+                        <script src="https://gist.github.com/Leo17220310/e32f0daab3b7459bd07b000bd5a32b8c.js"></script>
+                      </div>
                 </pre>
             </div>
         </div>
@@ -287,12 +101,12 @@ print("Erledigt :) Guck in die Datei : ) ")
 
     <h3>Meine Spiele mit Unity (Video)</h3> 
     <p>Alle Spiele wurden selbst programmiert mit C# (mit Tutorial). Falls das Video nicht aufklappt, runterscrollen.</p>
-      <!-- Hier fügen Sie den Video-Button und das Video-Element hinzu -->
+     
       <button class="video-button" onclick="showVideo()">Video anzeigen (-> runter scrollen)</button>
       <div id="video-container" class="video-container" style="display: none;">
           <video controls width="820" height="400">
               <source src="VideoFertig.mp4" type="video/mp4">
-              <!-- Fügen Sie hier alternative Videoformate hinzu, falls benötigt -->
+              
               Dein Browser unterstützt das Video-Tag nicht.
           </video>
       </div>
@@ -304,10 +118,15 @@ print("Erledigt :) Guck in die Datei : ) ")
         <div class="horizontal-line"></div>
     </div>
     <div class="centered-l"><h1>LEO</h1></div>
-        
     <footer>
         &copy; 2024 Leo Radtke
     </footer>
+    <button class="toggle-mode-button" onclick="toggleMode()">Dark Mode</button>
+    
+    
+
+    
+    
         
 
 </body>

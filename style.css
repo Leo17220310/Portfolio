@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #6d7379;
     color: #fff;
     padding: 1em;
     text-align: center;
@@ -53,8 +53,8 @@ h2 {
 }
 
 footer {
-    background-color: #333;
-    color: #9ecbf7;
+    background-color:#6d7379 ;
+    color: #ffffff;
     text-align: center;
     padding: 0.7em;
     position: fixed;
@@ -141,4 +141,70 @@ footer {
     border: none;
     border-radius: 3px;
 }
+.gist .gist-meta{
+    display: none !important;
+  }
 
+  :root {
+    --light-bg-color: #d5eaf5;
+    --dark-bg-color: #222;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg-color);
+    color: #333; /* behält die ursprüngliche Schriftfarbe bei */
+    position: relative;
+    transition: background-color 0.5s; /* Übergangseffekt für den Hintergrund */
+}
+
+.dark-mode {
+    background-color: var(--dark-bg-color);
+}
+
+/* Farbe des "Code anzeigen/verbergen"-Buttons */
+.code-button {
+    background-color: #333;
+    color: #ffffff;
+}
+
+/* Farbe des Texts im "Code anzeigen/verbergen"-Bereich */
+.code-container pre,
+.code-container code {
+    color: black;
+}
+
+/* Farbe des Texts im "Projekt"-Bereich */
+.project h3,
+.project p {
+    color: black;
+}
+
+/* Farbe der Überschriften im "Projekt"-Bereich */
+h2 {
+    color: black;
+}
+
+/* Farbe des "Code anzeigen/verbergen"-Buttons */
+.toggle-mode-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px; /* abgerundete Ecken */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Schatten hinzufügen */
+}
+
+.toggle-mode-button:hover {
+    background-color: #f0f0f0; /* Hintergrundfarbe ändern beim Hover-Effekt */
+}
