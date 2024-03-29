@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="gh-pages\style.css">
-    <script src="gh-pages\script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Leos Portfolio</title>
     <script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=0f95050f"></script>
 </head>
@@ -20,7 +20,7 @@
         <div class="project">
             <h3>Projekt 1: Schere / Stein / Papier</h3>
             <p>Dieses Spiel wird vielen sehr bekannt vorkommen, man spielt Schere Stein Papier gegen den Computer. <br> Man kann gewinnen, verlieren und unentschieden spielen.</p>
-            <button class="code-button" onclick="toggleCode('code1')">Code anzeigen/verbergen</button>
+            <button id="toggleButton1" class="code-button" onclick="toggleCode('code1', 'toggleButton1')">Anzeigen</button>
             <div id="code1" class="code-container">
                 <pre>
                     <code>
@@ -39,7 +39,7 @@
         <div class="project">
             <h3>Projekt 2: Web Scraping mit Python</h3>
             <p>In diesem Projekt habe ich aus einer Website die wichtigsten und neuesten News <br> in eine extra Datei gespeichert. Man kann auf die Datei zugreifen und immer wenn man <br> den Code ausführt, bleiben die alten News in der Datei gespeichert.</p>
-            <button class="code-button" onclick="toggleCode('code2')">Code anzeigen/verbergen</button>
+            <button id="toggleButton1" class="code-button" onclick="toggleCode('code2', 'toggleButton2')">Anzeigen</button>
             <div id="code2" class="code-container">
                 <pre>
                     <code>
@@ -59,7 +59,7 @@
         <div class="project">
             <h3>Projekt 3: Caesar-Verschlüsselung</h3>
             <p>In diesem Projekt habe ich eine Nachricht, die ein Benutzer eingeben kann, verschlüsselt <br> mithilfe der Caesar-Verschlüsselung.</p>
-            <button class="code-button" onclick="toggleCode('code3')">Code anzeigen/verbergen</button>
+            <button id="toggleButton1" class="code-button" onclick="toggleCode('code3', 'toggleButton3')">Anzeigen</button>
             <div id="code3" class="code-container">
                 <pre>
                    
@@ -74,20 +74,20 @@
         <h2>Meine Websites (Screenshot)</h2>
         <h3>Website 1: Rezepte</h3>
         <p>Das ist eine Website, wo man zum Beispiel von dem beliebten Gericht Sushi <br> Rezept Ideen von anderen Websites bekommt.</p>
-        <button class="screenshot-button" onclick="showScreenshot('screenshot2')">Screenshot anzeigen</button>
+        <button class="screenshot-button" onclick="showScreenshot('screenshot2')"> Anzeigen</button>
         <div id="screenshot2" class="screenshot-modal" onclick="hideScreenshot('screenshot2')">
             <span class="close-button" onclick="hideScreenshot('screenshot2')">X</span>
-            <img src="gh-pages/assets/WebsiteFürDasPraktikum.png" alt="Screenshot von Projekt 2">
+            <img src="assets/WebsiteFürDasPraktikum.png" alt="Screenshot von Projekt 2">
 
         </div>
     </div>
      
     <h3>Website 2: Rätsel</h3>
     <p>Das ist eine Website, wo es verschiedene Rätsel gibt.  <br>Natürlich auch mit den Lösungen.</p>
-    <button class="screenshot-button" onclick="showScreenshot('screenshot3')">Screenshot anzeigen</button>
+    <button class="screenshot-button" onclick="showScreenshot('screenshot3')"> Anzeigen</button>
     <div id="screenshot3" class="screenshot-modal" onclick="hideScreenshot('screenshot3')">
         <span class="close-button" onclick="hideScreenshot('screenshot3')">X</span>
-        <img src="gh-pages/assets/WebsiteRätsel.png" alt="Screenshot von Projekt 3">
+        <img src="assets/WebsiteRätsel.png" alt="Screenshot von Projekt 3">
 
         
 
@@ -95,10 +95,10 @@
 
     <h3>Website 3: Hundesteckbrief</h3>
     <p>Diese Website war meine erste Website. Es ist ein Steckbrief über meinen Hund. <br> Es war das erste Mal, dass ich mit HTML/CSS in Verbindung gekommen bin.</p>
-    <button class="screenshot-button" onclick="showScreenshot('screenshot4')">Screenshot anzeigen</button>
+    <button class="screenshot-button" onclick="showScreenshot('screenshot4')"> Anzeigen</button>
     <div id="screenshot4" class="screenshot-modal" onclick="hideScreenshot('screenshot4')">
         <span class="close-button" onclick="hideScreenshot('screenshot4')">X</span>
-        <img src="gh-pages/assets/PepperWebsite.png" alt="Screenshot von Projekt 4">
+        <img src="assets/PepperWebsite.png" alt="Screenshot von Projekt 4">
 
     </div>
     <h3>Website 4: Portfolio</h3>
@@ -107,14 +107,14 @@
     <h3>Meine Spiele mit Unity (Video)</h3> 
     <p>Alle Spiele wurden selbst programmiert mit C# (mit Tutorial). Falls das Video nicht aufklappt, runterscrollen.</p>
      
-      <button class="video-button" onclick="showVideo()">Video anzeigen (-> runter scrollen)</button>
+      <button class="video-button" onclick="showVideo()"> Anzeigen</button>
       <div id="video-container" class="video-container" style="display: none;">
           <video controls width="820" height="400">
-            <source src="gh-pages/assets/VideoFertig.mp4" type="video/mp4">
+            <source src="assets/VideoFertig.mp4" type="video/mp4">
 
               
               Dein Browser unterstützt das Video-Tag nicht.
-          </video>
+                        </video>
       </div>
 
     </section>
