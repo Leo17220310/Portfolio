@@ -208,3 +208,9 @@ h2 {
 .toggle-mode-button:hover {
     background-color: #f0f0f0; /* Hintergrundfarbe ändern beim Hover-Effekt */
 }
+
+/* Verstecke das Element am unteren Rand */
+.animated-ring {
+    display: none;
+}
+
