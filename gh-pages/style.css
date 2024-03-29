@@ -1,6 +1,6 @@
 
 body {
-    font-family: Arial, sans-serif;
+    font-family:'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
     background-color: #d5eaf5;
@@ -32,14 +32,15 @@ h2 {
 }
 
 .code-container {
-     display: none;
-    margin-top: 10px;
-    padding: 10px;
+    display: none;
+    margin-top: -30px;
+    padding: 0px; /* Reduzieren Sie das Padding, um den Container kleiner zu machen */
     background-color: #f0f0f0;
-    border: -20px solid #ddd;
-    border-radius: -30px;
-    text-align: left; /* Hier die Änderung */
-    white-space: pre-wrap; /* Um Zeilenumbrüche und Einrückungen im Code zu bewahren */
+    border: 2px solid #ddd; /* Ändern Sie den Border-Wert nach Bedarf */
+    border-radius: 0px; /* Reduzieren Sie den Border-Radius nach Bedarf */
+    text-align: left;
+    white-space: pre-wrap;
+    overflow-x: auto; /* Fügen Sie eine horizontale Scroll-Leiste hinzu, falls der Inhalt breiter als der Container ist */
 }
 
 
@@ -155,13 +156,13 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--light-bg-color);
-    color: #333; /* behält die ursprüngliche Schriftfarbe bei */
+    color: #404040; /* behält die ursprüngliche Schriftfarbe bei */
     position: relative;
     transition: background-color 0.5s; /* Übergangseffekt für den Hintergrund */
 }
 
 .dark-mode {
-    background-color: var(--dark-bg-color);
+    background-color:rgb(74, 74, 74);
 }
 
 /* Farbe des "Code anzeigen/verbergen"-Buttons */
@@ -210,3 +211,48 @@ h2 {
 }
 
 /* Verstecke das Element am unteren Rand */
+
+/* Add this CSS rule to make the "Code anzeigen/verbergen" buttons have the same style as the "Screenshot anzeigen" button */
+.code-button,
+.screenshot-button {
+    background-color: #c3c6c6;
+    color: #000000;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.code-button:hover,
+.screenshot-button:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.code-button:active,
+.screenshot-button:active {
+    background-color: #d9d9d9; /* Change background color when button is clicked */
+}
+.video-button {
+    background-color: #c3c6c6; /* Hintergrundfarbe */
+    color: #000; /* Textfarbe */
+    padding: 10px 20px; /* Innenabstand */
+    border: 2px solid #000; /* Rahmen */
+    border-radius: 16px; /* Rahmenradius */
+    cursor: pointer; /* Mauszeiger */
+    font-size: 11px; /* Schriftgröße */
+    font-weight: bold; /* Schriftstil */
+    text-transform: uppercase; /* Großschreibung */
+    transition: background-color 0.3s, color 0.3s; /* Übergangseffekte */
+}
+
+.video-button:hover {
+    background-color: #f0f0f0; /* Hintergrundfarbe beim Hovern */
+}
+
+.video-button:active {
+    background-color: #d9d9d9; /* Hintergrundfarbe beim Klicken */
+}

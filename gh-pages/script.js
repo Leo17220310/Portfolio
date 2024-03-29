@@ -1,15 +1,15 @@
-
+//SCRENSHOTS SEHEM
 function showScreenshot(modalId) {
     var modal = document.getElementById(modalId);
     modal.style.display = "flex";
 }
-
+// SCREENSHOTS SEHEN
 function hideScreenshot(modalId) {
     var modal = document.getElementById(modalId);
     modal.style.display = "none";
 }
 
-
+// DARK UND WHITE MODE
 function toggleMode() {
     var body = document.body;
     var button = document.querySelector('.toggle-mode-button');
@@ -23,19 +23,27 @@ function toggleMode() {
     }
 }
 
-
-
-
-
-function toggleCode(codeId) {
+//BUTTONS REAGIEREN
+function toggleCode(codeId, buttonId) {
     var codeContainer = document.getElementById(codeId);
-    if (codeContainer.style.display === "none") {
-        codeContainer.style.display = "block";
-    } else {
+    var button = document.getElementById(buttonId);
+
+    // Überprüfen, ob der codeContainer sichtbar ist oder nicht
+    var isCodeVisible = window.getComputedStyle(codeContainer).display !== "none";
+
+    // Umkehren des Zustands und Aktualisieren des Button-Textes entsprechend
+    if (isCodeVisible) {
         codeContainer.style.display = "none";
+        button.textContent = "Anzeigen";
+    } else {
+        codeContainer.style.display = "block";
+        button.textContent = "Verbergen";
     }
 }
 
+
+
+// VIDEO SEHEN
 function showVideo() {
     var videoContainer = document.getElementById("video-container");
     if (videoContainer.style.display === "none") {
